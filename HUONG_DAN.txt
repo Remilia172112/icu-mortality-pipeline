@@ -141,11 +141,11 @@
   Thời gian ước tính (máy 32GB RAM):
   ┌──────────────────────────────────────────┐
   │ Step 1 - Cohort             :  ~2 phút   │
-  │ Step 2 - chartevents        :  ~3-4 giờ  │
-  │ Step 3 - labevents          :  ~40 phút  │
-  │ Step 4 - inputevents (vaso) :  ~10 phút  │
+  │ Step 2 - chartevents        :  ~1-2 giờ  │
+  │ Step 3 - labevents          :  ~30 phút  │
+  │ Step 4 - inputevents (vaso) :  ~5 phút  │
   │ Step 5 - output + procedure :  ~5 phút   │
-  │ Step 6 - Merge & tensor     :  ~20 phút  │
+  │ Step 6 - Merge & tensor     :  ~10 phút  │
   │                                          │
   │ TỔNG: khoảng 5-6 giờ                     │
   └──────────────────────────────────────────┘
@@ -159,7 +159,7 @@
   Double-click: 4_verify.bat
 
   Kết quả đúng:
-    X_train: (N, 48, 70)   mortality ~15%
+    X_train: (N, 48, 69)   mortality ~15%
     NaN trong X_train: 0
     >>> Du lieu sach! San sang train LSTM / Transformer.
 
@@ -185,13 +185,13 @@
 
   Trong OUT_DIR sau khi chạy xong:
 
-  X_train.pt          ← (N_train, 48, 70) — dùng để train model
+  X_train.pt          ← (N_train, 48, 69) — dùng để train model
   y_train.pt          ← (N_train,) — label 0/1
   X_val.pt / y_val.pt ← validation set
   X_test.pt / y_test.pt ← test set
 
   scaler.pkl          ← StandardScaler — lưu để dùng khi inference
-  feature_names.json  ← tên và phân nhóm 70 features
+  feature_names.json  ← tên và phân nhóm 69 features
   cohort.parquet      ← thông tin gốc ICU stays + labels
   chart_wide.parquet  ← cache (giữ để chạy lại nhanh)
   lab_wide.parquet    ← cache

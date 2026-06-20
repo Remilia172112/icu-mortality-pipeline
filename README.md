@@ -29,20 +29,18 @@ The pipeline turns raw MIMIC-IV CSV tables into 48-hour, 69-feature patient tens
 
 ```
 PREPROCESSOR/
-├── __pycache__/
 ├── ablation/                       # ablation study outputs
 ├── checkpoints/                    # Bi-LSTM checkpoints
 ├── checkpoints_lstm/                # LSTM checkpoints
 ├── checkpoints_transformer/         # Transformer checkpoints
-├── checkpoints_v2/ , checkpoints_v4/ # earlier pipeline version checkpoints
+├── checkpoints_v2/ , checkpoints_v4/ # Bi-LSTM version checkpoints
 ├── img/                             # generated figures
 ├── multi_seed_results/              # 5-seed experiment outputs
 ├── results/                         # evaluation results
 ├── results_compare/                 # cross-model comparison results
-├── venv/                            # Python virtual environment
 │
 ├── 1_setup.bat                      # create venv + install deps
-├── 2_run.bat                        # run preprocessing (~5-6h)
+├── 2_run.bat                        # run preprocessing (~1-2h)
 ├── 3_rerun_from_cache.bat           # resume from cache if interrupted
 ├── 4_verify.bat                     # sanity-check output tensors
 ├── 5_train.bat                      # train Bi-LSTM
@@ -211,17 +209,15 @@ Pipeline chuyển đổi dữ liệu CSV thô của MIMIC-IV thành tensor bện
 
 ```
 PREPROCESSOR/
-├── __pycache__/
 ├── ablation/                       # kết quả ablation study
 ├── checkpoints/                    # checkpoint mô hình Bi-LSTM
 ├── checkpoints_lstm/                # checkpoint mô hình LSTM
 ├── checkpoints_transformer/         # checkpoint mô hình Transformer
-├── checkpoints_v2/ , checkpoints_v4/ # checkpoint các phiên bản pipeline trước
+├── checkpoints_v2/ , checkpoints_v4/ # checkpoint mô hình Bi-LSTM v2 v4
 ├── img/                             # hình ảnh tạo ra
 ├── multi_seed_results/              # kết quả thí nghiệm 5 seed
 ├── results/                         # kết quả đánh giá
 ├── results_compare/                 # kết quả so sánh giữa các mô hình
-├── venv/                            # Python virtual environment
 │
 ├── 1_setup.bat                      # tạo venv + cài thư viện
 ├── 2_run.bat                        # chạy preprocessing (~5-6 giờ)
