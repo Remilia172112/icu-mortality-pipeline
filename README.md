@@ -34,7 +34,6 @@ PREPROCESSOR/
 ├── checkpoints_lstm/                # LSTM checkpoints
 ├── checkpoints_transformer/         # Transformer checkpoints
 ├── checkpoints_v2/ , checkpoints_v4/ # Bi-LSTM version checkpoints
-├── img/                             # generated figures
 ├── multi_seed_results/              # 5-seed experiment outputs
 ├── results/                         # evaluation results
 ├── results_compare/                 # cross-model comparison results
