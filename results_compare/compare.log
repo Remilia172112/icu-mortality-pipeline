@@ -1,0 +1,61 @@
+13:51:57  INFO  ============================================================
+13:51:57  INFO    COMPARE ALL MODELS — ICU Mortality Prediction
+13:51:57  INFO  ============================================================
+13:51:57  INFO    Device: cuda
+13:51:57  INFO    Data dir: E:\KLTN\mimic4_processed
+13:51:57  INFO    Missing mask: LOADED
+13:51:57  INFO    Train: torch.Size([59670, 48, 69])  |  Test: torch.Size([17077, 48, 69])
+13:51:57  INFO    Test mortality: 11.1%
+
+13:51:57  INFO  ────────────────────────────────────────────────────────────
+13:51:57  INFO    [1/5] Logistic Regression
+13:51:57  INFO  ────────────────────────────────────────────────────────────
+13:52:01  INFO      Train+predict: 4.2s
+13:52:01  INFO  ────────────────────────────────────────────────────────────
+13:52:01  INFO    [2/5] XGBoost
+13:52:01  INFO  ────────────────────────────────────────────────────────────
+13:52:08  INFO      Train+predict: 6.3s (best iter=257)
+13:52:08  INFO  ────────────────────────────────────────────────────────────
+13:52:08  INFO    [3/5] LSTM
+13:52:08  INFO  ────────────────────────────────────────────────────────────
+13:52:08  INFO    → Loading LSTM từ checkpoints_lstm/best_model.pt
+13:52:08  DEBUG      args saved: {'data_dir': 'E:\\KLTN\\mimic4_processed', 'ckpt_dir': 'checkpoints_lstm', 'hidden_size': 128, 'n_layers': 2, 'dropout': 0.5, 'lr': 0.0003, 'weight_decay': 0.001, 'batch_size': 128, 'epochs': 50, 'patience': 15, 'use_mask': 1, 'use_sampler': 0, 'pos_weight': 3.0}
+13:52:08  INFO      Loaded + predict: 0.6s (params=269,441, best_ep=4)
+13:52:08  INFO  ────────────────────────────────────────────────────────────
+13:52:08  INFO    [4/5] Bi-LSTM
+13:52:08  INFO  ────────────────────────────────────────────────────────────
+13:52:08  INFO    → Loading Bi-LSTM từ checkpoints_v4/best_model.pt
+13:52:08  DEBUG      args saved: {'data_dir': 'E:\\KLTN\\mimic4_processed', 'ckpt_dir': 'checkpoints_v4', 'hidden_size': 128, 'n_layers': 2, 'dropout': 0.5, 'lr': 0.0003, 'weight_decay': 0.001, 'batch_size': 128, 'epochs': 50, 'patience': 15, 'use_mask': 1, 'use_sampler': 0, 'pos_weight': 3.0}
+13:52:09  INFO      Loaded + predict: 0.6s (params=669,953, best_ep=6)
+13:52:09  INFO  ────────────────────────────────────────────────────────────
+13:52:09  INFO    [5/5] Transformer
+13:52:09  INFO  ────────────────────────────────────────────────────────────
+13:52:09  INFO    → Loading Transformer từ checkpoints_transformer/best_model.pt
+13:52:09  DEBUG      args saved: {'data_dir': 'E:\\KLTN\\mimic4_processed', 'ckpt_dir': 'checkpoints_transformer', 'd_model': 128, 'n_heads': 8, 'n_layers': 4, 'dim_ff': 256, 'dropout': 0.3, 'lr': 0.0001, 'weight_decay': 0.001, 'batch_size': 128, 'epochs': 50, 'patience': 15, 'warmup_epochs': 3, 'use_mask': 1, 'use_sampler': 0, 'pos_weight': 3.0}
+13:52:09  INFO      Loaded + predict: 0.6s (params=547,841, best_ep=14)
+13:52:09  INFO  
+
+13:52:09  INFO  ================================================================================
+13:52:09  INFO    KẾT QUẢ TEST SET
+13:52:09  INFO  ================================================================================
+13:52:10  INFO  
+13:52:10  INFO    Metric        Logistic Regression         XGBoost            LSTM         Bi-LSTM     Transformer
+13:52:10  INFO    ----------------------------------------------------------------------------------------------
+13:52:10  INFO    AUROC                 0.9197          0.9361 ★        0.9201          0.9221          0.9227  
+13:52:10  INFO    AUPRC                 0.6979          0.7396 ★        0.6953          0.7048          0.7015  
+13:52:10  INFO    Accuracy              0.8645          0.8940          0.8983          0.9088 ★        0.8990  
+13:52:10  INFO    F1                    0.5686          0.6215 ★        0.6032          0.6207          0.6101  
+13:52:10  INFO    Sensitivity           0.8047 ★        0.7847          0.6966          0.6728          0.7119  
+13:52:10  INFO    Specificity           0.8720          0.9076          0.9235          0.9382 ★        0.9224  
+13:52:10  INFO    PPV                   0.4396          0.5145          0.5318          0.5761 ★        0.5338  
+13:52:10  INFO    NPV                   0.9728 ★        0.9712          0.9606          0.9583          0.9625  
+13:52:10  INFO    ----------------------------------------------------------------------------------------------
+13:52:10  INFO    ★ = best cho metric đó
+13:52:10  INFO  
+  CSV  : results_compare\comparison_table.csv
+13:52:10  INFO    MD   : results_compare\comparison_table.md
+13:52:10  INFO    ROC  : results_compare\roc_curves.png
+13:52:10  INFO    PR   : results_compare\pr_curves.png
+13:52:10  INFO  
+  Hoàn thành!
+

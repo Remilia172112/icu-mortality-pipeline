@@ -1,0 +1,52 @@
+14:03:29  INFO  ============================================================
+14:03:29  INFO    ABLATION STUDY — Bi-LSTM ICU Mortality
+14:03:29  INFO  ============================================================
+14:03:29  INFO    Device: cuda
+14:03:29  INFO    Max epochs / config: 25  |  Patience: 8
+14:03:29  INFO    Base config: hidden=128, layers=2, dropout=0.5, lr=0.0003, wd=0.001, pos_weight=3.0
+14:03:29  INFO    Loading data từ E:\KLTN\mimic4_processed
+14:03:30  INFO    Train: torch.Size([59670, 48, 69]), Test: torch.Size([17077, 48, 69])
+14:03:30  INFO  
+  Tổng số config sẽ chạy: 12
+
+14:03:30  INFO    [1/12] Missing Mask=OFF
+14:04:16  INFO      AUROC=0.9214  AUPRC=0.7019  F1=0.6180  PPV=0.5781  params=599,297  ep=12  (46s)
+14:04:16  INFO    [2/12] Missing Mask=ON
+14:05:16  INFO      AUROC=0.9249  AUPRC=0.7114  F1=0.6236  PPV=0.5635  params=669,953  ep=14  (60s)
+14:05:16  INFO    [3/12] pos_weight=1.0
+14:06:20  INFO      AUROC=0.9220  AUPRC=0.7020  F1=0.6045  PPV=0.7459  params=669,953  ep=15  (65s)
+14:06:20  INFO    [4/12] pos_weight=3.0
+14:07:06  INFO      AUROC=0.9249  AUPRC=0.7123  F1=0.6241  PPV=0.5703  params=669,953  ep=11  (46s)
+14:07:06  INFO    [5/12] pos_weight=5.0
+14:08:02  INFO      AUROC=0.9233  AUPRC=0.7103  F1=0.5816  PPV=0.4604  params=669,953  ep=13  (56s)
+14:08:02  INFO    [6/12] pos_weight=8.0
+14:08:57  INFO      AUROC=0.9236  AUPRC=0.7093  F1=0.5531  PPV=0.4164  params=669,953  ep=13  (55s)
+14:08:57  INFO    [7/12] Hidden Size=64
+14:09:51  INFO      AUROC=0.9218  AUPRC=0.7040  F1=0.6192  PPV=0.5915  params=203,905  ep=13  (54s)
+14:09:51  INFO    [8/12] Hidden Size=128
+14:10:39  INFO      AUROC=0.9236  AUPRC=0.7115  F1=0.6197  PPV=0.5535  params=669,953  ep=11  (48s)
+14:10:39  INFO    [9/12] Hidden Size=256
+14:12:42  INFO      AUROC=0.9232  AUPRC=0.7136  F1=0.6310  PPV=0.6040  params=2,388,481  ep=11  (123s)
+14:12:42  INFO    [10/12] n_layers=1
+14:13:29  INFO      AUROC=0.9250  AUPRC=0.7128  F1=0.6317  PPV=0.6101  params=274,689  ep=15  (47s)
+14:13:29  INFO    [11/12] n_layers=2
+14:14:22  INFO      AUROC=0.9228  AUPRC=0.7104  F1=0.6283  PPV=0.5834  params=669,953  ep=13  (53s)
+14:14:22  INFO    [12/12] n_layers=3
+14:15:30  INFO      AUROC=0.9225  AUPRC=0.7083  F1=0.6212  PPV=0.5665  params=1,065,217  ep=12  (68s)
+14:15:30  INFO  
+  Tổng thời gian: 12.0 phút
+14:15:30  INFO    CSV: ablation\ablation_results.csv
+14:15:30  INFO    MD : ablation\ablation_results.md
+14:15:31  INFO  
+
+14:15:31  INFO  ======================================================================
+14:15:31  INFO    TÓM TẮT KẾT QUẢ ABLATION
+14:15:31  INFO  ======================================================================
+14:15:31  INFO    Missing Mask   : best = ON        AUROC=0.9249  AUPRC=0.7114  F1=0.6236
+14:15:31  INFO    pos_weight     : best = 3.0       AUROC=0.9249  AUPRC=0.7123  F1=0.6241
+14:15:31  INFO    Hidden Size    : best = 128       AUROC=0.9236  AUPRC=0.7115  F1=0.6197
+14:15:31  INFO    n_layers       : best = 1         AUROC=0.9250  AUPRC=0.7128  F1=0.6317
+14:15:31  INFO  ======================================================================
+14:15:31  INFO  
+  Hoàn thành! Output: ablation/
+

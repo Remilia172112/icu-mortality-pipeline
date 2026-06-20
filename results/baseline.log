@@ -1,0 +1,140 @@
+04:36:53  INFO  ============================================================
+04:36:53  INFO    Baseline Models — ICU Mortality Prediction
+04:36:53  INFO  ============================================================
+04:36:53  INFO    Data dir: E:\KLTN\mimic4_processed
+04:36:54  INFO    X_train: (59670, 48, 69)  (N=59670, T=48, F=69)
+04:36:54  INFO    Train mortality: 11.1%
+04:36:54  INFO    Test  mortality: 11.1%
+04:36:54  INFO    Missing mask: LOADED → thêm missing_rate features
+04:36:54  INFO  
+  Extracting temporal features (mean/std/min/max/first/last)...
+04:36:55  INFO    Feature vector shape: (59670, 483)  (69 features × 7 stats)
+04:36:55  INFO    Train+Val: 68,165 samples
+
+04:36:55  INFO    Class imbalance — class_weight scale: 8.0x
+
+04:36:55  INFO    [1/2] Logistic Regression ...
+04:36:58  INFO  
+  ── Logistic Regression  (3.5s) ──────────────────────────
+04:36:58  INFO    ┌──────────────┬──────────┐
+04:36:58  INFO    │ Metric       │ Value    │
+04:36:58  INFO    ├──────────────┼──────────┤
+04:36:58  INFO    │ AUROC        │ 0.9197   │
+04:36:58  INFO    │ AUPRC        │ 0.6979   │
+04:36:58  INFO    │ Accuracy     │ 0.8645   │
+04:36:58  INFO    │ F1           │ 0.5686   │
+04:36:58  INFO    │ Sensitivity  │ 0.8047   │
+04:36:58  INFO    │ Specificity  │ 0.8720   │
+04:36:58  INFO    │ PPV          │ 0.4396   │
+04:36:58  INFO    │ NPV          │ 0.9728   │
+04:36:58  INFO    └──────────────┴──────────┘
+04:36:58  INFO    Confusion: TP=1525  FP=1944  FN=370  TN=13238
+04:36:58  INFO  
+  [2/2] XGBoost ...
+04:37:05  INFO  
+  ── XGBoost  (6.3s, best iter=257) ──────────────────────────
+04:37:05  INFO    ┌──────────────┬──────────┐
+04:37:05  INFO    │ Metric       │ Value    │
+04:37:05  INFO    ├──────────────┼──────────┤
+04:37:05  INFO    │ AUROC        │ 0.9361   │
+04:37:05  INFO    │ AUPRC        │ 0.7396   │
+04:37:05  INFO    │ Accuracy     │ 0.8940   │
+04:37:05  INFO    │ F1           │ 0.6215   │
+04:37:05  INFO    │ Sensitivity  │ 0.7847   │
+04:37:05  INFO    │ Specificity  │ 0.9076   │
+04:37:05  INFO    │ PPV          │ 0.5145   │
+04:37:05  INFO    │ NPV          │ 0.9712   │
+04:37:05  INFO    └──────────────┴──────────┘
+04:37:05  INFO    Confusion: TP=1487  FP=1403  FN=408  TN=13779
+04:37:05  INFO  
+
+04:37:05  INFO  ============================================================
+04:37:05  INFO    BẢNG SO SÁNH TỔNG HỢP (Test Set)
+04:37:05  INFO  ============================================================
+04:37:05  INFO    Metric           Logistic Regression               XGBoost          Bi-LSTM (v4)
+04:37:05  INFO    --------------------------------------------------------------------------------
+04:37:05  INFO    AUROC                     0.9197              0.9361 ★            0.9221  
+04:37:05  INFO    AUPRC                     0.6979              0.7396 ★            0.7048  
+04:37:05  INFO    Accuracy                  0.8645              0.8940              0.9088 ★
+04:37:05  INFO    F1                        0.5686              0.6215 ★            0.6207  
+04:37:05  INFO    Sensitivity               0.8047 ★            0.7847              0.6728  
+04:37:05  INFO    Specificity               0.8720              0.9076              0.9382 ★
+04:37:05  INFO    PPV                       0.4396              0.5145              0.5761 ★
+04:37:05  INFO    NPV                       0.9728 ★            0.9712              0.9583  
+04:37:05  INFO    --------------------------------------------------------------------------------
+04:37:05  INFO    ★ = best cho metric đó
+
+04:37:05  INFO    Kết quả lưu: results\baseline_comparison.csv
+04:37:05  INFO    ROC curve: results\roc_curves.png
+04:37:05  INFO  
+  Hoàn thành!
+04:38:13  INFO  ============================================================
+04:38:13  INFO    Baseline Models — ICU Mortality Prediction
+04:38:13  INFO  ============================================================
+04:38:13  INFO    Data dir: E:\KLTN\mimic4_processed
+04:38:13  INFO    X_train: (59670, 48, 69)  (N=59670, T=48, F=69)
+04:38:13  INFO    Train mortality: 11.1%
+04:38:13  INFO    Test  mortality: 11.1%
+04:38:14  INFO    Missing mask: LOADED → thêm missing_rate features
+04:38:14  INFO  
+  Extracting temporal features (mean/std/min/max/first/last)...
+04:38:15  INFO    Feature vector shape: (59670, 483)  (69 features × 7 stats)
+04:38:15  INFO    Train+Val: 68,165 samples
+
+04:38:15  INFO    Class imbalance — class_weight scale: 8.0x
+
+04:38:15  INFO    [1/2] Logistic Regression ...
+04:38:18  INFO  
+  ── Logistic Regression  (3.6s) ──────────────────────────
+04:38:18  INFO    ┌──────────────┬──────────┐
+04:38:18  INFO    │ Metric       │ Value    │
+04:38:18  INFO    ├──────────────┼──────────┤
+04:38:18  INFO    │ AUROC        │ 0.9197   │
+04:38:18  INFO    │ AUPRC        │ 0.6979   │
+04:38:18  INFO    │ Accuracy     │ 0.8645   │
+04:38:18  INFO    │ F1           │ 0.5686   │
+04:38:18  INFO    │ Sensitivity  │ 0.8047   │
+04:38:18  INFO    │ Specificity  │ 0.8720   │
+04:38:18  INFO    │ PPV          │ 0.4396   │
+04:38:18  INFO    │ NPV          │ 0.9728   │
+04:38:18  INFO    └──────────────┴──────────┘
+04:38:18  INFO    Confusion: TP=1525  FP=1944  FN=370  TN=13238
+04:38:18  INFO  
+  [2/2] XGBoost ...
+04:38:25  INFO  
+  ── XGBoost  (6.7s, best iter=257) ──────────────────────────
+04:38:25  INFO    ┌──────────────┬──────────┐
+04:38:25  INFO    │ Metric       │ Value    │
+04:38:25  INFO    ├──────────────┼──────────┤
+04:38:25  INFO    │ AUROC        │ 0.9361   │
+04:38:25  INFO    │ AUPRC        │ 0.7396   │
+04:38:25  INFO    │ Accuracy     │ 0.8940   │
+04:38:25  INFO    │ F1           │ 0.6215   │
+04:38:25  INFO    │ Sensitivity  │ 0.7847   │
+04:38:25  INFO    │ Specificity  │ 0.9076   │
+04:38:25  INFO    │ PPV          │ 0.5145   │
+04:38:25  INFO    │ NPV          │ 0.9712   │
+04:38:25  INFO    └──────────────┴──────────┘
+04:38:25  INFO    Confusion: TP=1487  FP=1403  FN=408  TN=13779
+04:38:25  INFO  
+
+04:38:25  INFO  ============================================================
+04:38:25  INFO    BẢNG SO SÁNH TỔNG HỢP (Test Set)
+04:38:25  INFO  ============================================================
+04:38:25  INFO    Metric           Logistic Regression               XGBoost          Bi-LSTM (v4)
+04:38:25  INFO    --------------------------------------------------------------------------------
+04:38:25  INFO    AUROC                     0.9197              0.9361 ★            0.9221  
+04:38:25  INFO    AUPRC                     0.6979              0.7396 ★            0.7048  
+04:38:25  INFO    Accuracy                  0.8645              0.8940              0.9088 ★
+04:38:25  INFO    F1                        0.5686              0.6215 ★            0.6207  
+04:38:25  INFO    Sensitivity               0.8047 ★            0.7847              0.6728  
+04:38:25  INFO    Specificity               0.8720              0.9076              0.9382 ★
+04:38:25  INFO    PPV                       0.4396              0.5145              0.5761 ★
+04:38:25  INFO    NPV                       0.9728 ★            0.9712              0.9583  
+04:38:25  INFO    --------------------------------------------------------------------------------
+04:38:25  INFO    ★ = best cho metric đó
+
+04:38:25  INFO    Kết quả lưu: results\baseline_comparison.csv
+04:38:25  INFO    ROC curve: results\roc_curves.png
+04:38:25  INFO  
+  Hoàn thành!

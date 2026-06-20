@@ -1,0 +1,160 @@
+13:41:22  INFO  ============================================================
+13:41:22  INFO    Transformer ICU Mortality Prediction Training
+13:41:22  INFO  ============================================================
+13:41:22  INFO    GPU: NVIDIA GeForce RTX 5060 Laptop GPU (8.5 GB)
+13:41:22  INFO    Device: cuda
+13:41:22  INFO    Data dir: E:\KLTN\mimic4_processed
+13:41:23  INFO    X_train: (59670, 48, 69)  (N, 48, 69)
+13:41:23  INFO    Train mortality: 11.1%
+13:41:23  INFO    Val   mortality: 11.2%
+13:41:23  INFO    Missing mask: LOADED (input dim = 69 * 2 = 138)
+13:41:23  INFO    Model: Transformer  (d_model=128, heads=8, layers=4, dim_ff=256)
+13:41:23  INFO    Trainable parameters: 547,841
+13:41:23  INFO    pos_weight: 3.00  (sai nhóm tử vong bị phạt gấp 3.0 lần)
+13:41:24  INFO    Optimizer: AdamW (lr=0.0001, wd=0.001, betas=(0.9, 0.98))
+13:41:24  INFO    Scheduler: Warmup(3) + ReduceLROnPlateau(patience=5)
+13:41:24  INFO    Batch size: 128
+13:41:24  INFO    Max epochs: 50  |  Early stopping: 15
+13:41:24  INFO  
+13:41:24  INFO  Epoch 01/50  (lr=0.000033)
+13:41:31  INFO    → Train loss: 0.7547  |  Val loss: 0.4434  |  AUROC: 0.8951  |  AUPRC: 0.6209  |  F1: 0.5773  |  7s
+13:41:31  INFO    ★ New best AUROC: 0.8951 → checkpoints_transformer\best_model.pt
+13:41:31  INFO  
+13:41:31  INFO  Epoch 02/50  (lr=0.000067)
+13:41:38  INFO    → Train loss: 0.5641  |  Val loss: 0.4144  |  AUROC: 0.9092  |  AUPRC: 0.6759  |  F1: 0.5972  |  7s
+13:41:38  INFO    ★ New best AUROC: 0.9092 → checkpoints_transformer\best_model.pt
+13:41:38  INFO  
+13:41:38  INFO  Epoch 03/50  (lr=0.000100)
+13:41:44  INFO    → Train loss: 0.4921  |  Val loss: 0.4083  |  AUROC: 0.9127  |  AUPRC: 0.6843  |  F1: 0.6077  |  7s
+13:41:44  INFO    ★ New best AUROC: 0.9127 → checkpoints_transformer\best_model.pt
+13:41:44  INFO  
+13:41:44  INFO  Epoch 04/50  (lr=0.000100)
+13:41:51  INFO    → Train loss: 0.4521  |  Val loss: 0.3853  |  AUROC: 0.9158  |  AUPRC: 0.6957  |  F1: 0.6077  |  7s
+13:41:51  INFO    ★ New best AUROC: 0.9158 → checkpoints_transformer\best_model.pt
+13:41:51  INFO  
+13:41:51  INFO  Epoch 05/50  (lr=0.000100)
+13:41:59  INFO    → Train loss: 0.4312  |  Val loss: 0.3730  |  AUROC: 0.9230  |  AUPRC: 0.7058  |  F1: 0.6075  |  8s
+13:41:59  INFO    ★ New best AUROC: 0.9230 → checkpoints_transformer\best_model.pt
+13:41:59  INFO  
+13:41:59  INFO  Epoch 06/50  (lr=0.000100)
+13:42:07  INFO    → Train loss: 0.4084  |  Val loss: 0.3719  |  AUROC: 0.9222  |  AUPRC: 0.7072  |  F1: 0.6113  |  7s
+13:42:07  INFO    No improvement (1/15)
+13:42:07  INFO  
+13:42:07  INFO  Epoch 07/50  (lr=0.000100)
+13:42:14  INFO    → Train loss: 0.3948  |  Val loss: 0.3665  |  AUROC: 0.9258  |  AUPRC: 0.7151  |  F1: 0.6156  |  8s
+13:42:14  INFO    ★ New best AUROC: 0.9258 → checkpoints_transformer\best_model.pt
+13:42:14  INFO  
+13:42:14  INFO  Epoch 08/50  (lr=0.000100)
+13:42:21  INFO    → Train loss: 0.3792  |  Val loss: 0.3666  |  AUROC: 0.9249  |  AUPRC: 0.7158  |  F1: 0.6257  |  7s
+13:42:21  INFO    No improvement (1/15)
+13:42:21  INFO  
+13:42:21  INFO  Epoch 09/50  (lr=0.000100)
+13:42:28  INFO    → Train loss: 0.3669  |  Val loss: 0.3679  |  AUROC: 0.9259  |  AUPRC: 0.7185  |  F1: 0.6216  |  7s
+13:42:28  INFO    ★ New best AUROC: 0.9259 → checkpoints_transformer\best_model.pt
+13:42:28  INFO  
+13:42:28  INFO  Epoch 10/50  (lr=0.000100)
+13:42:38  INFO    → Train loss: 0.3589  |  Val loss: 0.3695  |  AUROC: 0.9266  |  AUPRC: 0.7208  |  F1: 0.6346  |  9s
+13:42:38  INFO    ★ New best AUROC: 0.9266 → checkpoints_transformer\best_model.pt
+13:42:38  INFO  
+13:42:38  INFO  Epoch 11/50  (lr=0.000100)
+13:42:44  INFO    → Train loss: 0.3528  |  Val loss: 0.3677  |  AUROC: 0.9273  |  AUPRC: 0.7224  |  F1: 0.6199  |  7s
+13:42:44  INFO    ★ New best AUROC: 0.9273 → checkpoints_transformer\best_model.pt
+13:42:44  INFO  
+13:42:44  INFO  Epoch 12/50  (lr=0.000100)
+13:42:51  INFO    → Train loss: 0.3426  |  Val loss: 0.3630  |  AUROC: 0.9271  |  AUPRC: 0.7226  |  F1: 0.6122  |  7s
+13:42:51  INFO    No improvement (1/15)
+13:42:51  INFO  
+13:42:51  INFO  Epoch 13/50  (lr=0.000100)
+13:42:58  INFO    → Train loss: 0.3330  |  Val loss: 0.3723  |  AUROC: 0.9274  |  AUPRC: 0.7211  |  F1: 0.6245  |  7s
+13:42:58  INFO    ★ New best AUROC: 0.9274 → checkpoints_transformer\best_model.pt
+13:42:58  INFO  
+13:42:58  INFO  Epoch 14/50  (lr=0.000100)
+13:43:05  INFO    → Train loss: 0.3259  |  Val loss: 0.3659  |  AUROC: 0.9280  |  AUPRC: 0.7271  |  F1: 0.6155  |  7s
+13:43:05  INFO    ★ New best AUROC: 0.9280 → checkpoints_transformer\best_model.pt
+13:43:05  INFO  
+13:43:05  INFO  Epoch 15/50  (lr=0.000100)
+13:43:11  INFO    → Train loss: 0.3203  |  Val loss: 0.3690  |  AUROC: 0.9278  |  AUPRC: 0.7216  |  F1: 0.6178  |  7s
+13:43:11  INFO    No improvement (1/15)
+13:43:11  INFO  
+13:43:11  INFO  Epoch 16/50  (lr=0.000100)
+13:43:19  INFO    → Train loss: 0.3125  |  Val loss: 0.3831  |  AUROC: 0.9254  |  AUPRC: 0.7224  |  F1: 0.6274  |  8s
+13:43:19  INFO    No improvement (2/15)
+13:43:19  INFO  
+13:43:19  INFO  Epoch 17/50  (lr=0.000100)
+13:43:28  INFO    → Train loss: 0.3031  |  Val loss: 0.3697  |  AUROC: 0.9277  |  AUPRC: 0.7262  |  F1: 0.6215  |  9s
+13:43:28  INFO    No improvement (3/15)
+13:43:28  INFO  
+13:43:28  INFO  Epoch 18/50  (lr=0.000100)
+13:43:36  INFO    → Train loss: 0.2968  |  Val loss: 0.3854  |  AUROC: 0.9244  |  AUPRC: 0.7206  |  F1: 0.6289  |  8s
+13:43:36  INFO    No improvement (4/15)
+13:43:36  INFO  
+13:43:36  INFO  Epoch 19/50  (lr=0.000100)
+13:43:43  INFO    → Train loss: 0.2903  |  Val loss: 0.3903  |  AUROC: 0.9217  |  AUPRC: 0.7147  |  F1: 0.6004  |  7s
+13:43:43  INFO    No improvement (5/15)
+13:43:43  INFO  
+13:43:43  INFO  Epoch 20/50  (lr=0.000100)
+13:43:50  INFO    → Train loss: 0.2824  |  Val loss: 0.3936  |  AUROC: 0.9229  |  AUPRC: 0.7166  |  F1: 0.6066  |  7s
+13:43:50  INFO    No improvement (6/15)
+13:43:50  INFO  
+13:43:50  INFO  Epoch 21/50  (lr=0.000050)
+13:43:58  INFO    → Train loss: 0.2649  |  Val loss: 0.4368  |  AUROC: 0.9214  |  AUPRC: 0.7143  |  F1: 0.6221  |  8s
+13:43:58  INFO    No improvement (7/15)
+13:43:58  INFO  
+13:43:58  INFO  Epoch 22/50  (lr=0.000050)
+13:44:06  INFO    → Train loss: 0.2604  |  Val loss: 0.4500  |  AUROC: 0.9197  |  AUPRC: 0.7131  |  F1: 0.6271  |  8s
+13:44:06  INFO    No improvement (8/15)
+13:44:06  INFO  
+13:44:06  INFO  Epoch 23/50  (lr=0.000050)
+13:44:15  INFO    → Train loss: 0.2539  |  Val loss: 0.4557  |  AUROC: 0.9191  |  AUPRC: 0.7120  |  F1: 0.6201  |  9s
+13:44:15  INFO    No improvement (9/15)
+13:44:15  INFO  
+13:44:15  INFO  Epoch 24/50  (lr=0.000050)
+13:44:24  INFO    → Train loss: 0.2491  |  Val loss: 0.4704  |  AUROC: 0.9160  |  AUPRC: 0.7050  |  F1: 0.6114  |  9s
+13:44:24  INFO    No improvement (10/15)
+13:44:24  INFO  
+13:44:24  INFO  Epoch 25/50  (lr=0.000050)
+13:44:33  INFO    → Train loss: 0.2445  |  Val loss: 0.4685  |  AUROC: 0.9191  |  AUPRC: 0.7067  |  F1: 0.6178  |  9s
+13:44:33  INFO    No improvement (11/15)
+13:44:33  INFO  
+13:44:33  INFO  Epoch 26/50  (lr=0.000050)
+13:44:42  INFO    → Train loss: 0.2407  |  Val loss: 0.4853  |  AUROC: 0.9151  |  AUPRC: 0.6970  |  F1: 0.6112  |  9s
+13:44:42  INFO    No improvement (12/15)
+13:44:42  INFO  
+13:44:42  INFO  Epoch 27/50  (lr=0.000025)
+13:44:51  INFO    → Train loss: 0.2294  |  Val loss: 0.4988  |  AUROC: 0.9162  |  AUPRC: 0.7000  |  F1: 0.6119  |  9s
+13:44:51  INFO    No improvement (13/15)
+13:44:51  INFO  
+13:44:51  INFO  Epoch 28/50  (lr=0.000025)
+13:45:00  INFO    → Train loss: 0.2269  |  Val loss: 0.5082  |  AUROC: 0.9163  |  AUPRC: 0.6993  |  F1: 0.6064  |  9s
+13:45:00  INFO    No improvement (14/15)
+13:45:00  INFO  
+13:45:00  INFO  Epoch 29/50  (lr=0.000025)
+13:45:07  INFO    → Train loss: 0.2235  |  Val loss: 0.5238  |  AUROC: 0.9147  |  AUPRC: 0.6955  |  F1: 0.6094  |  7s
+13:45:07  INFO    No improvement (15/15)
+13:45:07  INFO  
+  Early stopping tại epoch 29
+13:45:07  INFO  ============================================================
+13:45:07  INFO  ĐÁNH GIÁ TRÊN TẬP TEST
+13:45:07  INFO  ============================================================
+13:45:08  INFO    Best epoch: 14
+13:45:08  INFO  
+13:45:08  INFO    ┌──────────────┬──────────┐
+13:45:08  INFO    │ Metric       │ Value    │
+13:45:08  INFO    ├──────────────┼──────────┤
+13:45:08  INFO    │ AUROC        │ 0.9227   │
+13:45:08  INFO    │ AUPRC        │ 0.7015   │
+13:45:08  INFO    │ Accuracy     │ 0.8990   │
+13:45:08  INFO    │ F1           │ 0.6101   │
+13:45:08  INFO    │ Sensitivity  │ 0.7119   │
+13:45:08  INFO    │ Specificity  │ 0.9224   │
+13:45:08  INFO    │ PPV          │ 0.5338   │
+13:45:08  INFO    │ NPV          │ 0.9625   │
+13:45:08  INFO    └──────────────┴──────────┘
+13:45:08  INFO  
+13:45:08  INFO    Confusion Matrix:
+13:45:08  INFO      TP=1349  FP=1178
+13:45:08  INFO      FN=546  TN=14004
+13:45:08  INFO  
+13:45:08  INFO    Thời gian training: 0h 3m 43s
+13:45:08  INFO    Checkpoints: checkpoints_transformer/
+13:45:08  INFO    History: checkpoints_transformer/training_history.csv

@@ -1,0 +1,139 @@
+13:39:18  INFO  ============================================================
+13:39:18  INFO    LSTM ICU Mortality Prediction Training
+13:39:18  INFO  ============================================================
+13:39:18  INFO    GPU: NVIDIA GeForce RTX 5060 Laptop GPU (8.5 GB)
+13:39:18  INFO    Device: cuda
+13:39:18  INFO    Data dir: E:\KLTN\mimic4_processed
+13:39:18  INFO    X_train: (59670, 48, 69)  (N, 48, 69)
+13:39:18  INFO    Train mortality: 11.1%
+13:39:18  INFO    Val   mortality: 11.2%
+13:39:18  INFO    Missing mask: LOADED (input dim = 69 * 2 = 138)
+13:39:18  INFO    Model: LSTM unidirectional (hidden=128, layers=2)
+13:39:18  INFO    Trainable parameters: 269,441
+13:39:18  INFO    pos_weight: 3.00  (sai nhóm tử vong bị phạt gấp 3.0 lần)
+13:39:19  INFO    Optimizer: AdamW (lr=0.0003, wd=0.001)
+13:39:19  INFO    Scheduler: ReduceLROnPlateau (patience=5, factor=0.5)
+13:39:19  INFO    Batch size: 128
+13:39:19  INFO    Max epochs: 50  |  Early stopping: 15
+13:39:19  INFO  
+13:39:19  INFO  Epoch 01/50  (lr=0.000300)
+13:39:23  INFO    → Train loss: 0.4297  |  Val loss: 0.3771  |  AUROC: 0.9185  |  AUPRC: 0.7082  |  F1: 0.6152  |  4s
+13:39:23  DEBUG    Checkpoint: checkpoints_lstm\epoch_01.pt
+13:39:23  INFO    ★ New best AUROC: 0.9185 → checkpoints_lstm\best_model.pt
+13:39:23  INFO  
+13:39:23  INFO  Epoch 02/50  (lr=0.000300)
+13:39:27  INFO    → Train loss: 0.3654  |  Val loss: 0.3688  |  AUROC: 0.9238  |  AUPRC: 0.7164  |  F1: 0.6151  |  4s
+13:39:27  DEBUG    Checkpoint: checkpoints_lstm\epoch_02.pt
+13:39:27  INFO    ★ New best AUROC: 0.9238 → checkpoints_lstm\best_model.pt
+13:39:27  INFO  
+13:39:27  INFO  Epoch 03/50  (lr=0.000300)
+13:39:30  INFO    → Train loss: 0.3508  |  Val loss: 0.3653  |  AUROC: 0.9251  |  AUPRC: 0.7219  |  F1: 0.6207  |  3s
+13:39:30  DEBUG    Checkpoint: checkpoints_lstm\epoch_03.pt
+13:39:30  INFO    ★ New best AUROC: 0.9251 → checkpoints_lstm\best_model.pt
+13:39:30  INFO  
+13:39:30  INFO  Epoch 04/50  (lr=0.000300)
+13:39:34  INFO    → Train loss: 0.3393  |  Val loss: 0.3642  |  AUROC: 0.9252  |  AUPRC: 0.7222  |  F1: 0.6226  |  3s
+13:39:34  DEBUG    Checkpoint: checkpoints_lstm\epoch_04.pt
+13:39:34  INFO    ★ New best AUROC: 0.9252 → checkpoints_lstm\best_model.pt
+13:39:34  INFO  
+13:39:34  INFO  Epoch 05/50  (lr=0.000300)
+13:39:37  INFO    → Train loss: 0.3285  |  Val loss: 0.3668  |  AUROC: 0.9251  |  AUPRC: 0.7205  |  F1: 0.6147  |  3s
+13:39:37  DEBUG    Checkpoint: checkpoints_lstm\epoch_05.pt
+13:39:37  INFO    No improvement (1/15)
+13:39:37  INFO  
+13:39:37  INFO  Epoch 06/50  (lr=0.000300)
+13:39:40  INFO    → Train loss: 0.3186  |  Val loss: 0.3704  |  AUROC: 0.9244  |  AUPRC: 0.7180  |  F1: 0.6176  |  3s
+13:39:40  DEBUG    Checkpoint: checkpoints_lstm\epoch_06.pt
+13:39:40  INFO    No improvement (2/15)
+13:39:40  INFO  
+13:39:40  INFO  Epoch 07/50  (lr=0.000300)
+13:39:44  INFO    → Train loss: 0.3074  |  Val loss: 0.3825  |  AUROC: 0.9230  |  AUPRC: 0.7155  |  F1: 0.6193  |  3s
+13:39:44  DEBUG    Checkpoint: checkpoints_lstm\epoch_07.pt
+13:39:44  INFO    No improvement (3/15)
+13:39:44  INFO  
+13:39:44  INFO  Epoch 08/50  (lr=0.000300)
+13:39:47  INFO    → Train loss: 0.2949  |  Val loss: 0.3920  |  AUROC: 0.9223  |  AUPRC: 0.7129  |  F1: 0.6218  |  3s
+13:39:47  DEBUG    Checkpoint: checkpoints_lstm\epoch_08.pt
+13:39:47  INFO    No improvement (4/15)
+13:39:47  INFO  
+13:39:47  INFO  Epoch 09/50  (lr=0.000300)
+13:39:51  INFO    → Train loss: 0.2860  |  Val loss: 0.4096  |  AUROC: 0.9166  |  AUPRC: 0.7004  |  F1: 0.6127  |  4s
+13:39:51  DEBUG    Checkpoint: checkpoints_lstm\epoch_09.pt
+13:39:51  INFO    No improvement (5/15)
+13:39:51  INFO  
+13:39:51  INFO  Epoch 10/50  (lr=0.000150)
+13:39:54  INFO    → Train loss: 0.2640  |  Val loss: 0.4309  |  AUROC: 0.9185  |  AUPRC: 0.7031  |  F1: 0.6191  |  3s
+13:39:54  DEBUG    Checkpoint: checkpoints_lstm\epoch_10.pt
+13:39:54  INFO    No improvement (6/15)
+13:39:54  INFO  
+13:39:54  INFO  Epoch 11/50  (lr=0.000150)
+13:39:58  INFO    → Train loss: 0.2523  |  Val loss: 0.4319  |  AUROC: 0.9155  |  AUPRC: 0.6952  |  F1: 0.6178  |  3s
+13:39:58  DEBUG    Checkpoint: checkpoints_lstm\epoch_11.pt
+13:39:58  INFO    No improvement (7/15)
+13:39:58  INFO  
+13:39:58  INFO  Epoch 12/50  (lr=0.000150)
+13:40:01  INFO    → Train loss: 0.2441  |  Val loss: 0.4447  |  AUROC: 0.9142  |  AUPRC: 0.6925  |  F1: 0.6172  |  3s
+13:40:01  DEBUG    Checkpoint: checkpoints_lstm\epoch_12.pt
+13:40:01  INFO    No improvement (8/15)
+13:40:01  INFO  
+13:40:01  INFO  Epoch 13/50  (lr=0.000150)
+13:40:04  INFO    → Train loss: 0.2347  |  Val loss: 0.4642  |  AUROC: 0.9135  |  AUPRC: 0.6886  |  F1: 0.6156  |  3s
+13:40:04  DEBUG    Checkpoint: checkpoints_lstm\epoch_13.pt
+13:40:04  INFO    No improvement (9/15)
+13:40:04  INFO  
+13:40:04  INFO  Epoch 14/50  (lr=0.000150)
+13:40:08  INFO    → Train loss: 0.2259  |  Val loss: 0.5010  |  AUROC: 0.9086  |  AUPRC: 0.6832  |  F1: 0.6165  |  3s
+13:40:08  DEBUG    Checkpoint: checkpoints_lstm\epoch_14.pt
+13:40:08  INFO    No improvement (10/15)
+13:40:08  INFO  
+13:40:08  INFO  Epoch 15/50  (lr=0.000150)
+13:40:11  INFO    → Train loss: 0.2188  |  Val loss: 0.5055  |  AUROC: 0.9079  |  AUPRC: 0.6811  |  F1: 0.6111  |  3s
+13:40:11  DEBUG    Checkpoint: checkpoints_lstm\epoch_15.pt
+13:40:11  INFO    No improvement (11/15)
+13:40:11  INFO  
+13:40:11  INFO  Epoch 16/50  (lr=0.000075)
+13:40:15  INFO    → Train loss: 0.2013  |  Val loss: 0.5248  |  AUROC: 0.9054  |  AUPRC: 0.6760  |  F1: 0.6093  |  4s
+13:40:15  DEBUG    Checkpoint: checkpoints_lstm\epoch_16.pt
+13:40:15  INFO    No improvement (12/15)
+13:40:15  INFO  
+13:40:15  INFO  Epoch 17/50  (lr=0.000075)
+13:40:19  INFO    → Train loss: 0.1956  |  Val loss: 0.5381  |  AUROC: 0.9058  |  AUPRC: 0.6771  |  F1: 0.6042  |  4s
+13:40:19  DEBUG    Checkpoint: checkpoints_lstm\epoch_17.pt
+13:40:19  INFO    No improvement (13/15)
+13:40:19  INFO  
+13:40:19  INFO  Epoch 18/50  (lr=0.000075)
+13:40:23  INFO    → Train loss: 0.1892  |  Val loss: 0.5433  |  AUROC: 0.9037  |  AUPRC: 0.6728  |  F1: 0.6091  |  4s
+13:40:23  DEBUG    Checkpoint: checkpoints_lstm\epoch_18.pt
+13:40:23  INFO    No improvement (14/15)
+13:40:23  INFO  
+13:40:23  INFO  Epoch 19/50  (lr=0.000075)
+13:40:27  INFO    → Train loss: 0.1851  |  Val loss: 0.5560  |  AUROC: 0.9022  |  AUPRC: 0.6683  |  F1: 0.6125  |  4s
+13:40:27  DEBUG    Checkpoint: checkpoints_lstm\epoch_19.pt
+13:40:27  INFO    No improvement (15/15)
+13:40:27  INFO  
+  Early stopping tại epoch 19
+13:40:27  INFO  ============================================================
+13:40:27  INFO  ĐÁNH GIÁ TRÊN TẬP TEST
+13:40:27  INFO  ============================================================
+13:40:28  INFO    Best epoch: 4
+13:40:28  INFO  
+13:40:28  INFO    ┌──────────────┬──────────┐
+13:40:28  INFO    │ Metric       │ Value    │
+13:40:28  INFO    ├──────────────┼──────────┤
+13:40:28  INFO    │ AUROC        │ 0.9201   │
+13:40:28  INFO    │ AUPRC        │ 0.6953   │
+13:40:28  INFO    │ Accuracy     │ 0.8983   │
+13:40:28  INFO    │ F1           │ 0.6032   │
+13:40:28  INFO    │ Sensitivity  │ 0.6966   │
+13:40:28  INFO    │ Specificity  │ 0.9235   │
+13:40:28  INFO    │ PPV          │ 0.5318   │
+13:40:28  INFO    │ NPV          │ 0.9606   │
+13:40:28  INFO    └──────────────┴──────────┘
+13:40:28  INFO  
+13:40:28  INFO    Confusion Matrix:
+13:40:28  INFO      TP=1320  FP=1162
+13:40:28  INFO      FN=575  TN=14020
+13:40:28  INFO  
+13:40:28  INFO    Thời gian training: 0h 1m 7s
+13:40:28  INFO    Checkpoints: checkpoints_lstm/
+13:40:28  INFO    History: checkpoints_lstm/training_history.csv

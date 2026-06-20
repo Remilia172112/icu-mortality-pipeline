@@ -1,0 +1,25 @@
+# Environments
+venv/
+env/
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch / Machine Learning weights
+*.pt
+*.pth
+*.ckpt
+
+# Data / Caches
+*.csv
+*.parquet
+/data/
+/OUT_DIR/
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store

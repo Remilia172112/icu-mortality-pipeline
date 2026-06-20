@@ -1,0 +1,199 @@
+================================================================
+  HƯỚNG DẪN SỬ DỤNG — MIMIC-IV Preprocessing BVQ11
+  Windows 11, 32GB RAM
+================================================================
+
+================================================================
+  CÁC FILE TRONG THƯ MỤC NÀY
+================================================================
+
+  config.txt              ← CHỈ CẦN CHỈNH FILE NÀY
+  1_setup.bat             ← Chạy 1 lần để cài môi trường
+  2_run.bat               ← Chạy chính để xử lý dữ liệu
+  3_rerun_from_cache.bat  ← Chạy lại nhanh nếu bị ngắt
+  4_verify.bat            ← Kiểm tra kết quả
+  mimic4_preprocessing.py ← Code xử lý (không cần đổi)
+  HUONG_DAN.txt           ← File này
+
+================================================================
+  FEATURES ĐƯỢC TRÍCH XUẤT (theo danh sách BVQ11)
+================================================================
+
+  34 Chart Vitals (từ chartevents ICU):
+  ┌────────────────────────────────────────────────────────┐
+  │ Nhóm                  │ Feature       │ itemid MIMIC   │
+  ├────────────────────────────────────────────────────────┤
+  │ Dấu hiệu sinh tồn     │ HR            │ 220045         │
+  │                       │ RR            │ 220210/224690  │
+  │                       │ Temp_C        │ 223761/223762  │
+  │                       │ SBP / DBP     │ 220179/220180  │
+  │                       │ MBP           │ 220052/220181  │
+  │                       │ SpO2          │ 220277         │
+  │                       │ GCS_total     │ 223900+901+739 │
+  ├────────────────────────────────────────────────────────┤
+  │ Công thức máu         │ WBC           │ 220546         │
+  │                       │ HCT           │ 220545         │
+  │                       │ PLT           │ 227457         │
+  ├────────────────────────────────────────────────────────┤
+  │ Khí máu động mạch     │ pH            │ 220274         │
+  │                       │ FiO2          │ 223835         │
+  │                       │ PaO2/PaCO2    │ 220224/220235  │
+  │                       │ HCO3          │ 227443         │
+  ├────────────────────────────────────────────────────────┤
+  │ Tim                   │ CK-MB / BNP   │ 227445/227446  │
+  ├────────────────────────────────────────────────────────┤
+  │ Gan                   │ AST / ALT     │ 220587/220644  │
+  │                       │ Bili TP/TT    │ 225690/225651  │
+  ├────────────────────────────────────────────────────────┤
+  │ Đông máu              │ D-Dimer       │ 225636         │
+  ├────────────────────────────────────────────────────────┤
+  │ Thận                  │ BUN / Creat   │ 225624/220615  │
+  │                       │ (Creat: µmol/L → mg/dL ÷88.42)│
+  ├────────────────────────────────────────────────────────┤
+  │ Nội tiết              │ Cortisol      │ 227463         │
+  ├────────────────────────────────────────────────────────┤
+  │ Điện giải             │ Na/K/Cl/Ca/Mg │ 220645/227442  │
+  │                       │               │ 220602/220615  │
+  │                       │               │ 220635         │
+  ├────────────────────────────────────────────────────────┤
+  │ Glucose               │ Glucose       │ 220621         │
+  ├────────────────────────────────────────────────────────┤
+  │ Nhân trắc học         │ Height/Weight │ 226707/226512  │
+  └────────────────────────────────────────────────────────┘
+
+  30 Lab Tests (từ labevents — bổ sung/fallback):
+    WBC_lab, HCT_lab, PLT_lab
+    pH_lab, PaO2_lab, PaCO2_lab, HCO3_lab
+    CKMB_lab, BNP_lab
+    AST_lab, ALT_lab, Albumin_lab (CHỈ CÓ Ở LAB)
+    Bili_total_lab, Bili_direct_lab, Bili_indirect_lab (CHỈ CÓ Ở LAB)
+    PT_lab, PTT_lab (CHỈ CÓ Ở LAB), DDimer_lab
+    BUN_lab, Creatinine_lab
+    Na_lab, K_lab, Cl_lab, Ca_lab, Mg_lab
+    TSH_lab, FT3_lab, FT4_lab (nội tiết tuyến giáp)
+    CRP_lab, Lactate_lab
+
+  6 Features điều trị:
+    Epinephrine_used    ← Thuốc vận mạch đang dùng (0/1 mỗi giờ)
+    Norepinephrine_used ← Noradrenaline đang dùng (0/1)
+    Dobutamine_used     ← Dobutamine đang dùng (0/1)
+    Dopamine_used       ← Dopamine đang dùng (0/1)
+    Urine_output_mL     ← Tổng nước tiểu mỗi giờ (mL)
+    CRRT_active         ← Đang lọc máu liên tục (0/1)
+
+  TỔNG: 69 features × 48 giờ × N bệnh nhân
+
+================================================================
+  YÊU CẦU DỮ LIỆU MIMIC-IV
+================================================================
+
+  Cấu trúc thư mục (chuẩn khi tải từ PhysioNet):
+
+  E:\mimiciv\3.1
+  ├── hosp\
+  │   ├── patients.csv
+  │   ├── admissions.csv
+  │   ├── labevents.csv       ← ~18GB (BẮT BUỘC)
+  │   ├── diagnoses_icd.csv
+  │   └── procedures_icd.csv
+  └── icu\
+      ├── icustays.csv
+      ├── chartevents.csv     ← ~41GB (BẮT BUỘC)
+      ├── inputevents.csv     ← ~3GB (thuốc vận mạch)
+      ├── outputevents.csv    ← ~500MB (nước tiểu)
+      └── procedureevents.csv ← ~150MB (CRRT)
+
+================================================================
+  CÁC BƯỚC THỰC HIỆN
+================================================================
+
+  BƯỚC 1 — Cài Python 3.10
+  ─────────────────────────
+  Tải tại: https://www.python.org/downloads/release/python-31011/
+  → Chọn "Windows installer (64-bit)"
+  → Khi cài: TÍCH "Add Python to PATH" ở màn hình đầu tiên
+  → Bấm "Install Now"
+
+  Kiểm tra: mở Command Prompt → gõ: python --version
+  Phải hiện: Python 3.10.x
+
+
+  BƯỚC 2 — Chỉnh config.txt
+  ──────────────────────────
+  Mở file config.txt bằng Notepad, sửa 2 dòng:
+
+    DATA_DIR=C:\mimic4          ← đường dẫn MIMIC-IV của bạn
+    OUT_DIR=C:\mimic4_processed ← nơi lưu kết quả (~60GB trống)
+
+  Lưu lại (Ctrl+S)
+
+
+  BƯỚC 3 — Cài môi trường (1 lần duy nhất)
+  ──────────────────────────────────────────
+  Double-click: 1_setup.bat
+  Đợi hiện "[XONG] Cai dat thanh cong!" (~5 phút)
+
+
+  BƯỚC 4 — Chạy xử lý dữ liệu
+  ─────────────────────────────
+  Double-click: 2_run.bat
+
+  Thời gian ước tính (máy 32GB RAM):
+  ┌──────────────────────────────────────────┐
+  │ Step 1 - Cohort             :  ~2 phút   │
+  │ Step 2 - chartevents        :  ~3-4 giờ  │
+  │ Step 3 - labevents          :  ~40 phút  │
+  │ Step 4 - inputevents (vaso) :  ~10 phút  │
+  │ Step 5 - output + procedure :  ~5 phút   │
+  │ Step 6 - Merge & tensor     :  ~20 phút  │
+  │                                          │
+  │ TỔNG: khoảng 5-6 giờ                     │
+  └──────────────────────────────────────────┘
+
+  Trong lúc chờ: ĐỪNG TẮT MÁY, ĐỪNG ĐÓNG CỬA SỔ
+  Máy tính vẫn dùng bình thường được
+
+
+  BƯỚC 5 — Kiểm tra kết quả
+  ──────────────────────────
+  Double-click: 4_verify.bat
+
+  Kết quả đúng:
+    X_train: (N, 48, 70)   mortality ~15%
+    NaN trong X_train: 0
+    >>> Du lieu sach! San sang train LSTM / Transformer.
+
+
+================================================================
+  NẾU BỊ NGẮT GIỮA CHỪNG (mất điện, treo máy...)
+================================================================
+
+  Pipeline tự động lưu cache sau mỗi bước:
+    chart_wide.parquet  → sau Step 2 (bước tốn thời gian nhất)
+    lab_wide.parquet    → sau Step 3
+    vaso_wide.parquet   → sau Step 4
+    urine_crrt.parquet  → sau Step 5
+
+  → Double-click 3_rerun_from_cache.bat
+  → Tự động phát hiện bước nào đã xong, bỏ qua, chạy tiếp
+  → Thường chỉ mất thêm 20-30 phút để hoàn tất
+
+
+================================================================
+  KẾT QUẢ ĐẦU RA
+================================================================
+
+  Trong OUT_DIR sau khi chạy xong:
+
+  X_train.pt          ← (N_train, 48, 70) — dùng để train model
+  y_train.pt          ← (N_train,) — label 0/1
+  X_val.pt / y_val.pt ← validation set
+  X_test.pt / y_test.pt ← test set
+
+  scaler.pkl          ← StandardScaler — lưu để dùng khi inference
+  feature_names.json  ← tên và phân nhóm 70 features
+  cohort.parquet      ← thông tin gốc ICU stays + labels
+  chart_wide.parquet  ← cache (giữ để chạy lại nhanh)
+  lab_wide.parquet    ← cache
+  vaso_wide.parquet   ← cache
+  urine_crrt.parquet  ← cache

@@ -1,0 +1,12 @@
+# ============================================================
+#  Chinh sua 2 dong duoi day cho dung voi may
+# ============================================================
+
+# Duong dan den thu muc MIMIC-IV (chua hosp\ va icu\)
+DATA_DIR=E:\KLTN\mimiciv\3.1
+
+# Noi luu ket qua (can ~60GB trong)
+OUT_DIR=E:\KLTN\mimic4_processed
+
+# So gio ICU dau tien
+HOURS=48

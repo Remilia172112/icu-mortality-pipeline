@@ -1,0 +1,178 @@
+03:49:38  INFO  ============================================================
+03:49:38  INFO    Bi-LSTM ICU Mortality Prediction Training
+03:49:38  INFO  ============================================================
+03:49:38  INFO    CPU mode (không có GPU)
+03:49:38  INFO    Tip: Nếu có RTX nhưng hybrid mode, thử:
+03:49:38  INFO      1. Mở NVIDIA Control Panel → Manage 3D Settings
+03:49:38  INFO      2. Program Settings → thêm python.exe
+03:49:38  INFO      3. Preferred GPU → High-performance NVIDIA processor
+03:49:38  INFO    Device: cpu
+03:49:38  INFO    Data dir: E:\KLTN\mimic4_processed
+03:49:38  INFO    X_train: (59670, 48, 69)  (N, 48, 69)
+03:49:38  INFO    Train mortality: 11.1%
+03:49:38  INFO    Val   mortality: 11.2%
+03:49:38  INFO    Missing mask: LOADED (input dim = 69 * 2 = 138)
+03:49:38  INFO    Imbalance: WeightedRandomSampler  (class 0: 53,038, class 1: 6,632)
+03:49:38  INFO    Model: BiLSTM (hidden=128, layers=2)
+03:49:38  INFO    Trainable parameters: 669,953
+03:49:38  INFO    pos_weight: 8.00  (sai nhóm tử vong bị phạt gấp 8.0 lần)
+03:49:40  INFO    Optimizer: AdamW (lr=0.001, wd=0.0001)
+03:49:40  INFO    Scheduler: ReduceLROnPlateau (patience=5, factor=0.5)
+03:49:40  INFO    Batch size: 64
+03:49:40  INFO    Max epochs: 50  |  Early stopping: 10
+03:49:40  INFO  
+03:49:40  INFO  Epoch 01/50  (lr=0.001000)
+03:50:34  INFO  ============================================================
+03:50:34  INFO    Bi-LSTM ICU Mortality Prediction Training
+03:50:34  INFO  ============================================================
+03:50:34  INFO    CPU mode (không có GPU)
+03:50:34  INFO    Tip: Nếu có RTX nhưng hybrid mode, thử:
+03:50:34  INFO      1. Mở NVIDIA Control Panel → Manage 3D Settings
+03:50:34  INFO      2. Program Settings → thêm python.exe
+03:50:34  INFO      3. Preferred GPU → High-performance NVIDIA processor
+03:50:34  INFO    Device: cpu
+03:50:34  INFO    Data dir: E:\KLTN\mimic4_processed
+03:50:34  INFO    X_train: (59670, 48, 69)  (N, 48, 69)
+03:50:34  INFO    Train mortality: 11.1%
+03:50:34  INFO    Val   mortality: 11.2%
+03:50:34  INFO    Missing mask: LOADED (input dim = 69 * 2 = 138)
+03:50:34  INFO    Imbalance: WeightedRandomSampler  (class 0: 53,038, class 1: 6,632)
+03:50:34  INFO    Model: BiLSTM (hidden=128, layers=2)
+03:50:34  INFO    Trainable parameters: 669,953
+03:50:34  INFO    pos_weight: 8.00  (sai nhóm tử vong bị phạt gấp 8.0 lần)
+03:50:35  INFO    Optimizer: AdamW (lr=0.001, wd=0.0001)
+03:50:35  INFO    Scheduler: ReduceLROnPlateau (patience=5, factor=0.5)
+03:50:35  INFO    Batch size: 64
+03:50:35  INFO    Max epochs: 50  |  Early stopping: 10
+03:50:35  INFO  
+03:50:35  INFO  Epoch 01/50  (lr=0.001000)
+03:51:19  INFO  ============================================================
+03:51:19  INFO    Bi-LSTM ICU Mortality Prediction Training
+03:51:19  INFO  ============================================================
+03:51:19  INFO    CPU mode (không có GPU)
+03:51:19  INFO    Tip: Nếu có RTX nhưng hybrid mode, thử:
+03:51:19  INFO      1. Mở NVIDIA Control Panel → Manage 3D Settings
+03:51:19  INFO      2. Program Settings → thêm python.exe
+03:51:19  INFO      3. Preferred GPU → High-performance NVIDIA processor
+03:51:19  INFO    Device: cpu
+03:51:19  INFO    Data dir: E:\KLTN\mimic4_processed
+03:51:19  INFO    X_train: (59670, 48, 69)  (N, 48, 69)
+03:51:19  INFO    Train mortality: 11.1%
+03:51:19  INFO    Val   mortality: 11.2%
+03:51:20  INFO    Missing mask: LOADED (input dim = 69 * 2 = 138)
+03:51:20  INFO    Imbalance: WeightedRandomSampler  (class 0: 53,038, class 1: 6,632)
+03:51:20  INFO    Model: BiLSTM (hidden=128, layers=2)
+03:51:20  INFO    Trainable parameters: 669,953
+03:51:20  INFO    pos_weight: 8.00  (sai nhóm tử vong bị phạt gấp 8.0 lần)
+03:51:20  INFO    Optimizer: AdamW (lr=0.001, wd=0.0001)
+03:51:20  INFO    Scheduler: ReduceLROnPlateau (patience=5, factor=0.5)
+03:51:20  INFO    Batch size: 64
+03:51:20  INFO    Max epochs: 50  |  Early stopping: 10
+03:51:20  INFO  
+03:51:20  INFO  Epoch 01/50  (lr=0.001000)
+03:58:29  INFO  ============================================================
+03:58:29  INFO    Bi-LSTM ICU Mortality Prediction Training
+03:58:29  INFO  ============================================================
+04:00:44  INFO  ============================================================
+04:00:44  INFO    Bi-LSTM ICU Mortality Prediction Training
+04:00:44  INFO  ============================================================
+04:00:59  INFO  ============================================================
+04:00:59  INFO    Bi-LSTM ICU Mortality Prediction Training
+04:00:59  INFO  ============================================================
+04:00:59  INFO    GPU: NVIDIA GeForce RTX 5060 Laptop GPU (8.5 GB)
+04:00:59  INFO    Device: cuda
+04:00:59  INFO    Data dir: E:\KLTN\mimic4_processed
+04:00:59  INFO    X_train: (59670, 48, 69)  (N, 48, 69)
+04:00:59  INFO    Train mortality: 11.1%
+04:00:59  INFO    Val   mortality: 11.2%
+04:00:59  INFO    Missing mask: LOADED (input dim = 69 * 2 = 138)
+04:00:59  INFO    Imbalance: WeightedRandomSampler  (class 0: 53,038, class 1: 6,632)
+04:00:59  INFO    Model: BiLSTM (hidden=128, layers=2)
+04:00:59  INFO    Trainable parameters: 669,953
+04:00:59  INFO    pos_weight: 8.00  (sai nhóm tử vong bị phạt gấp 8.0 lần)
+04:01:01  INFO    Optimizer: AdamW (lr=0.001, wd=0.0001)
+04:01:01  INFO    Scheduler: ReduceLROnPlateau (patience=5, factor=0.5)
+04:01:01  INFO    Batch size: 64
+04:01:01  INFO    Max epochs: 50  |  Early stopping: 10
+04:01:01  INFO  
+04:01:01  INFO  Epoch 01/50  (lr=0.001000)
+04:01:08  INFO    → Train loss: 0.8498  |  Val loss: 0.9051  |  AUROC: 0.9268  |  AUPRC: 0.7207  |  F1: 0.4214  |  7s
+04:01:08  DEBUG    Checkpoint: checkpoints\epoch_01.pt
+04:01:08  INFO    ★ New best AUROC: 0.9268 → checkpoints\best_model.pt
+04:01:08  INFO  
+04:01:08  INFO  Epoch 02/50  (lr=0.001000)
+04:01:13  INFO    → Train loss: 0.7066  |  Val loss: 0.7831  |  AUROC: 0.9219  |  AUPRC: 0.7176  |  F1: 0.4454  |  6s
+04:01:13  DEBUG    Checkpoint: checkpoints\epoch_02.pt
+04:01:13  INFO    No improvement (1/10)
+04:01:13  INFO  
+04:01:13  INFO  Epoch 03/50  (lr=0.001000)
+04:01:19  INFO    → Train loss: 0.6062  |  Val loss: 0.8484  |  AUROC: 0.9181  |  AUPRC: 0.7118  |  F1: 0.4687  |  6s
+04:01:19  DEBUG    Checkpoint: checkpoints\epoch_03.pt
+04:01:19  INFO    No improvement (2/10)
+04:01:19  INFO  
+04:01:19  INFO  Epoch 04/50  (lr=0.001000)
+04:01:26  INFO    → Train loss: 0.5298  |  Val loss: 0.9204  |  AUROC: 0.9168  |  AUPRC: 0.7115  |  F1: 0.5219  |  7s
+04:01:26  DEBUG    Checkpoint: checkpoints\epoch_04.pt
+04:01:26  INFO    No improvement (3/10)
+04:01:26  INFO  
+04:01:26  INFO  Epoch 05/50  (lr=0.001000)
+04:01:32  INFO    → Train loss: 0.4641  |  Val loss: 0.9523  |  AUROC: 0.9157  |  AUPRC: 0.7043  |  F1: 0.5222  |  7s
+04:01:32  DEBUG    Checkpoint: checkpoints\epoch_05.pt
+04:01:32  INFO    No improvement (4/10)
+04:01:32  INFO  
+04:01:32  INFO  Epoch 06/50  (lr=0.001000)
+04:01:38  INFO    → Train loss: 0.4074  |  Val loss: 1.0921  |  AUROC: 0.9181  |  AUPRC: 0.6990  |  F1: 0.5485  |  6s
+04:01:38  DEBUG    Checkpoint: checkpoints\epoch_06.pt
+04:01:38  INFO    No improvement (5/10)
+04:01:38  INFO  
+04:01:38  INFO  Epoch 07/50  (lr=0.001000)
+04:01:46  INFO    → Train loss: 0.3720  |  Val loss: 1.0799  |  AUROC: 0.9175  |  AUPRC: 0.7027  |  F1: 0.5545  |  7s
+04:01:46  DEBUG    Checkpoint: checkpoints\epoch_07.pt
+04:01:46  INFO    No improvement (6/10)
+04:01:46  INFO  
+04:01:46  INFO  Epoch 08/50  (lr=0.000500)
+04:01:53  INFO    → Train loss: 0.2633  |  Val loss: 1.5645  |  AUROC: 0.9122  |  AUPRC: 0.6842  |  F1: 0.5912  |  7s
+04:01:53  DEBUG    Checkpoint: checkpoints\epoch_08.pt
+04:01:53  INFO    No improvement (7/10)
+04:01:53  INFO  
+04:01:53  INFO  Epoch 09/50  (lr=0.000500)
+04:02:00  INFO    → Train loss: 0.2156  |  Val loss: 1.6685  |  AUROC: 0.9109  |  AUPRC: 0.6779  |  F1: 0.5830  |  7s
+04:02:00  DEBUG    Checkpoint: checkpoints\epoch_09.pt
+04:02:00  INFO    No improvement (8/10)
+04:02:00  INFO  
+04:02:00  INFO  Epoch 10/50  (lr=0.000500)
+04:02:07  INFO    → Train loss: 0.1907  |  Val loss: 1.8242  |  AUROC: 0.9089  |  AUPRC: 0.6719  |  F1: 0.5883  |  8s
+04:02:07  DEBUG    Checkpoint: checkpoints\epoch_10.pt
+04:02:07  INFO    No improvement (9/10)
+04:02:07  INFO  
+04:02:07  INFO  Epoch 11/50  (lr=0.000500)
+04:02:15  INFO    → Train loss: 0.1749  |  Val loss: 2.2321  |  AUROC: 0.9065  |  AUPRC: 0.6625  |  F1: 0.6105  |  7s
+04:02:15  DEBUG    Checkpoint: checkpoints\epoch_11.pt
+04:02:15  INFO    No improvement (10/10)
+04:02:15  INFO  
+  Early stopping tại epoch 11
+04:02:15  INFO  ============================================================
+04:02:15  INFO  ĐÁNH GIÁ TRÊN TẬP TEST
+04:02:15  INFO  ============================================================
+04:02:16  INFO    Best epoch: 1
+04:02:16  INFO  
+04:02:16  INFO    ┌──────────────┬──────────┐
+04:02:16  INFO    │ Metric       │ Value    │
+04:02:16  INFO    ├──────────────┼──────────┤
+04:02:16  INFO    │ AUROC        │ 0.9202   │
+04:02:16  INFO    │ AUPRC        │ 0.7017   │
+04:02:16  INFO    │ Accuracy     │ 0.7042   │
+04:02:16  INFO    │ F1           │ 0.4123   │
+04:02:16  INFO    │ Sensitivity  │ 0.9351   │
+04:02:16  INFO    │ Specificity  │ 0.6753   │
+04:02:16  INFO    │ PPV          │ 0.2644   │
+04:02:16  INFO    │ NPV          │ 0.9881   │
+04:02:16  INFO    └──────────────┴──────────┘
+04:02:16  INFO  
+04:02:16  INFO    Confusion Matrix:
+04:02:16  INFO      TP=1772  FP=4929
+04:02:16  INFO      FN=123  TN=10253
+04:02:16  INFO  
+04:02:16  INFO    Thời gian training: 0h 1m 13s
+04:02:16  INFO    Checkpoints: checkpoints/
+04:02:16  INFO    History: checkpoints/training_history.csv
