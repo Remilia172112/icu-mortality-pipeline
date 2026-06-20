@@ -214,7 +214,6 @@ PREPROCESSOR/
 ├── checkpoints_lstm/                # checkpoint mô hình LSTM
 ├── checkpoints_transformer/         # checkpoint mô hình Transformer
 ├── checkpoints_v2/ , checkpoints_v4/ # checkpoint mô hình Bi-LSTM v2 v4
-├── img/                             # hình ảnh tạo ra
 ├── multi_seed_results/              # kết quả thí nghiệm 5 seed
 ├── results/                         # kết quả đánh giá
 ├── results_compare/                 # kết quả so sánh giữa các mô hình
